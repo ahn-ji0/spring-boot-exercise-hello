@@ -1,13 +1,15 @@
 package com.springboot.hello.controller;
 
+import com.springboot.hello.domain.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
-public class HelloController {
-    @GetMapping(value = "/hello")
+public class GetController {
+    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    //앞으로는 이것 대신에 아래의 @GetMapping을 쓸 것.
     public String hello(){
         return "Hello World";
     }
@@ -30,5 +32,9 @@ public class HelloController {
             System.out.printf("key:%s value:%s\n",map.getKey(),map.getValue());
         });
         return "request2가 호출되었습니다.";
+    }
+    @GetMapping(value = "/request3")
+    public String getRequestParam3(MemberDto memberDto){
+        return memberDto.toString();
     }
 }
