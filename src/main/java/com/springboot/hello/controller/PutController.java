@@ -27,7 +27,7 @@ public class PutController {
     public String putMemberDto(@RequestBody MemberDto memberDto){
         return memberDto.toString();
     }
-    @PutMapping(value = "/member2")
+    @PutMapping(value = "/member3")
     public ResponseEntity<MemberDto> putMemberDto2(@RequestBody MemberDto memberDto){
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
