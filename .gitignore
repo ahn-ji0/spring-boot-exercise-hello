@@ -19,7 +19,9 @@ target/
 *.iml
 *.ipr
 .mvn
-src/main/resources/
+src/main/resources/static
+src/main/resources/templates
+
 
 ### NetBeans ###
 /nbproject/private/
