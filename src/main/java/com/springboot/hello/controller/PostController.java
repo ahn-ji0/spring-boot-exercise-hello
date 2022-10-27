@@ -12,5 +12,4 @@ public class PostController {
     public String postExample(){
         return "Hello Post API";
     }
-    @PostMapping("/")
 }
