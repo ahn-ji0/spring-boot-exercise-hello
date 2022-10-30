@@ -26,12 +26,15 @@ public class UserDao {
             return user;
         }
     };
-    public void add(User user){
-        this.jdbcTemplate.update("INSERT INTO users(id,name,password) VALUES(?,?,?)",user.getId(),user.getName(),user.getPassword());
+    public int add(User user){
+        return this.jdbcTemplate.update("INSERT INTO users(id,name,password) VALUES(?,?,?)",user.getId(),user.getName(),user.getPassword());
     }
 
-    public void deleteAll(){
-        this.jdbcTemplate.update("delete from users");
+    public int deleteId(String id) {
+        return this.jdbcTemplate.update("delete from users where id = ?",id);
+    }
+    public int deleteAll(){
+        return this.jdbcTemplate.update("delete from users");
     }
 
     public User getId(String id){
